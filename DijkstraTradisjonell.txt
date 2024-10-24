@@ -1,0 +1,22 @@
+Algorithm: Dijkstras algoritme for korteste stier (Tradisjonell)
+input: En vektet graf G = (V,E) med vektfunksjon w og en startnode s
+output: Et map dist som angir korteste vei fra s til alle noder i G 
+Procedure Dijkstra(G, s) 
+queue = empty priority queue 
+dist = empty map 
+
+for v element in V do 
+    dist[v] = infinity 
+    Insert(queue, v) with priority infinity 
+dist[s] = 0
+DecreasePriority(queue, s, 0) 
+
+while queue is not empty do 
+    u = removeMin(queue) 
+    for (u,v) element in E do 
+    c = dist[u] + w(u,v) 
+    if c < dist[v] then
+        dist[v] = c 
+        DecreasePriority(queue, v, c)
+return dist
+

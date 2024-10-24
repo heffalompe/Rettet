@@ -1,0 +1,18 @@
+algorithm: Korteste stier i en DAG 
+input: En vektet asyklisk graf G = (V,E) med vektfunksjon w og en startnode s 
+output: Et map dist, som angir korteste vei fra s til alle noder i G 
+Procedure DAGShortestPath(G, s) 
+   dist = empty map with infinity as default 
+   dist[s] = 0 
+
+   for u element in TOPSort(G) do 
+        for (u,v) element in E do 
+            c = dist[u] + w(u,v) 
+            if c < dist[v] then 
+               dist[v] = c 
+    return dist 
+
+//Algoritmen TOPSort:
+
+
+  
